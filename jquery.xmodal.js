@@ -5,10 +5,10 @@ Example:
 
 JS:
 $('.openModal').xModal({ width : "50%" });
-$(window).xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html" });
-$(window).xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html", effect:"vanish" });
-$(window).xModal({ html : "<p>In a Paragraph</p>" });
-$(window).xModal({ img : "http://lorempixel.com/output/technics-q-c-640-480-2.jpg" });
+$.xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html" });
+$.xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html", effect:"vanish" });
+$.xModal({ html : "<p>In a Paragraph</p>" });
+$.xModal({ img : "http://lorempixel.com/output/technics-q-c-640-480-2.jpg" });
 
 HTML:
 <a href="#xModal-Inline" class="openModal">Open Modal</a>
@@ -46,7 +46,6 @@ IMG:
     $.fn.xModal = function (options) {
 
       var $mMarkup = $('<div class="modal-wrapper"><div><div></div></div></div>'),
-          $mOuterWrapper = $mMarkup,
           $mInnerWrapper = $mMarkup.find('>*'),
           $mContentContainer = $mMarkup.find('>*>*');
 
@@ -59,13 +58,12 @@ IMG:
           html:""
       }, options);
 
-
       function bindEvents(){
         var closer = function(e){
           if (e) {
-              console.log('event:',e);
+              log('event:' + e);
           } else {
-              console.log("this didn't come from an event!");
+              log("this didn't come from an event!");
           }
 
           $($mMarkup).removeClass(settings.effect+'In').addClass(settings.effect+'Out');
@@ -77,19 +75,25 @@ IMG:
 
           //unbind the keyup event
           $(document).off('keyup.xModalEscape');
+          $(document).off('click.xModalCloseBody');
         }
 
         $(document).on('keyup.xModalEscape', function (e) {
-          console.log('e.which:', e.which);
+            log('e.which:'+ e.which);
             if (e.which == '27') {
-              console.log('you hit escape');
+              log('you hit escape');
               closer(e);
             }
         });
 
         $(document).off('click.xModalClose', '.closeModal').on('click.xModalClose', '.closeModal', function () {
-          console.log('you clicked the close icon');
+          log('you clicked the close icon');
           closer();
+        });
+
+        $(document).on('click.xModalCloseBody', '.modal-wrapper', function (e) {
+          log('clicked on this: '+ e.target);
+          if($(e.target).is('.modal-wrapper')) closer();
         });
       }
 
@@ -97,11 +101,11 @@ IMG:
         $.ajax({
           url: path,
           success: function (data) {
-            console.log('success');
+            log('success');
             callback(data);
           },
           error: function (err) {
-            console.log('error');
+            log('error');
             //callback(err);
             callback($('<div>ERROR</div>'));
           }
@@ -110,13 +114,13 @@ IMG:
 
 
       if(!this.selector) {
-        console.log('this is not a selector.');
+        log('this is not a selector.');
 
         var $mContent = $('<div/>');
 
         //inject content here
         if(settings.href){
-            console.log('you gotta path!', settings.href);
+            log('you gotta path!' + settings.href);
             ajaxService(settings.href, function(data){
               $(data).prependTo($mContentContainer);
             });
@@ -141,8 +145,8 @@ IMG:
           // });
 
           function loadSprite(src) {
-              var deferred = $.Deferred();
-              var sprite = new Image();
+              var deferred = $.Deferred(),
+                  sprite = new Image();
 
               sprite.onload = function() {
                   deferred.resolve();
@@ -157,7 +161,7 @@ IMG:
 
             $.when.apply(null, loaders).done(function() {
                 // callback when everything was loaded
-                console.log('doneskies');
+                log('done');
                 $("<img src="+settings.img+">").appendTo($mContent);
                 doStyling();
             });
@@ -187,14 +191,14 @@ IMG:
       }
 
       this.off('click.xModal').on('click.xModal', function (e) {
-        console.log('inside xmodal close')
+          log('inside xmodal close')
           e.preventDefault();
           var $this = $(this),
               $modal = $this.attr('href');
 
           if (!$modal.indexOf("#")) {
               //Open an inline modal on the page
-              console.log('contains a #');
+              log('contains a #');
 
               var $mInlineContent = $($modal);
               $mInlineContent.clone().appendTo($mContentContainer);
@@ -234,7 +238,23 @@ IMG:
           bindEvents();
 
       });
-
       return this;
     };
+
+  	jQuery.extend({
+  		xModal: function(obj){
+  			$(window).xModal(obj);
+  		}
+  	});
+
+
+    //Testing Code...
+    var devMode = true;
+
+    function log(msg){
+      if(devMode === true){
+        console.log(msg);
+      }
+    }
+
 }(jQuery));
