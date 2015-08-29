@@ -40,9 +40,9 @@ Ideas:
 * `$.xModal({ img : "http://lorempixel.com/output/technics-q-c-640-480-2.jpg" });`
 
 Finish this markdown doc. List all examples with markup and script:
-x - Inline: Lives on the page hidden. $('.openModal').xModal({ width : "50%" });
-x - Dynamic Inline: Content lives in plugin call. $('.openModal').xModal({ headline:"Headline", description:"Description" });
-x - Script: Can be executed wholey in script. $(window).xModal({ headline:"Headline", description:"Description" });
-x - Ajax: Lives on another page. $('.openModal').xModal();
-x - Dynamic Ajax: Lives on another page. $(window).xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html" });
-x - Html: Takes pure html
+1 - Inline: Lives on the page hidden. $('.openModal').xModal({ width : "50%" });
+2 - Dynamic Inline: Content lives in plugin call. $('.openModal').xModal({ headline:"Headline", description:"Description" });
+3 - Script: Can be executed wholey in script. $(window).xModal({ headline:"Headline", description:"Description" });
+4 - Ajax: Lives on another page. $('.openModal').xModal();
+5 - Dynamic Ajax: Lives on another page. $(window).xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html" });
+6 - Html: Takes pure html
