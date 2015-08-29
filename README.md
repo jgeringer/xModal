@@ -52,3 +52,16 @@ Finish this markdown doc. List all examples with markup and script:
 5 - Dynamic Ajax: Lives on another page. $(window).xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html" });
 
 6 - Html: Takes pure html
+
+### HTML:
+```
+<a href="#xModal-Inline" class="openModal">Open Modal</a>
+
+<div id="xModal-Inline" class="modal-wrapper">
+    <div class="modal-container">
+        <div class="modal-inner-container">
+            <p>Modal Content</p>
+        </div>
+    </div>
+</div>
+```
