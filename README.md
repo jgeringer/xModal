@@ -16,11 +16,9 @@ With no parameters, xModal will be instantiated with the default configuration o
 
 
 ### What's Next?
-Add a Demo link on joegeringer.com/xmodal
-Ideas:
+* Add a Demo link on joegeringer.com/xmodal
 * Multiple Modals
 * Different effects (maybe css magictime or greensock)
-* Ability to toggle all console.logs(create a function and output the consoles in there) for dev mode.
 * Add events: (begin, end)
 * $('element').on('xModelEnd', function(e, state){
     console.log(state.totalShow+' elements match the current filter');
@@ -41,17 +39,13 @@ Ideas:
 
 Finish this markdown doc. List all examples with markup and script:
 
-1 - Inline: Lives on the page hidden. $('.openModal').xModal({ width : "50%" });
-
-2 - Dynamic Inline: Content lives in plugin call. $('.openModal').xModal({ headline:"Headline", description:"Description" });
-
-3 - Script: Can be executed wholey in script. $(window).xModal({ headline:"Headline", description:"Description" });
-
-4 - Ajax: Lives on another page. $('.openModal').xModal();
-
-5 - Dynamic Ajax: Lives on another page. $(window).xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html" });
-
-6 - Html: Takes pure html
+* Inline: Lives on the page hidden. $('.openModal').xModal({ width : "50%" });
+* Dynamic Inline: Content lives in plugin call. $('.openModal').xModal({ headline:"Headline", description:"Description" });
+* Script: Can be executed wholey in script. $(window).xModal({ headline:"Headline", description:"Description" });
+* Ajax: Lives on another page. $('.openModal').xModal();
+* Dynamic Ajax: Lives on another page. $(window).xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html" });
+* Html: Takes pure html
+* Ability to toggle all console.logs(create a function and output the consoles in there) for dev mode.
 
 ### HTML:
 ```
