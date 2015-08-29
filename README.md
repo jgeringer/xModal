@@ -1,5 +1,5 @@
 # xModal
-jQuery Modal Plugin
+jQuery Modal Plugin (3kb minified)
 
 ## API Methods:
 
