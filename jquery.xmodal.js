@@ -1,45 +1,6 @@
 ﻿/*
-xModal Plugin: By Joe Geringer (Nansen)
-
-Example:
-
-JS:
-$('.openModal').xModal({ width : "50%" });
-$.xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html" });
-$.xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html", effect:"vanish" });
-$.xModal({ html : "<p>In a Paragraph</p>" });
-$.xModal({ img : "http://lorempixel.com/output/technics-q-c-640-480-2.jpg" });
-
-HTML:
-<a href="#xModal-Inline" class="openModal">Open Modal</a>
-
-<div id="xModal-Inline" class="modal-wrapper">
-    <div class="modal-container">
-        <div class="modal-inner-container">
-            <p>Modal Content</p>
-        </div>
-    </div>
-</div>
-
-Different Modals:
-x - Inline: Lives on the page hidden. $('.openModal').xModal({ width : "50%" });
-x - Dynamic Inline: Content lives in plugin call. $('.openModal').xModal({ headline:"Headline", description:"Description" });
-x - Script: Can be executed wholey in script. $(window).xModal({ headline:"Headline", description:"Description" });
-x - Ajax: Lives on another page. $('.openModal').xModal();
-x - Dynamic Ajax: Lives on another page. $(window).xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html" });
-x - Html: Takes pure html
-IMG:
-
-  Ideas:
-  Pure HTML
-  Multiple Modals
-  Different effects (maybe css magictime or greensock)
-  Ability to toggle all console.logs(create a function and output the consoles in there) for dev mode.
-  Extend it (add events)
-  Click outside and close
-  Loading icon
-  Center Image
-
+  xModal Plugin: By Joe Geringer (Nansen)
+  https://github.com/jgeringer/xModal
 */
 
 (function ($) {
