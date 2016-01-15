@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>xModal Project</title>
+    <link rel="stylesheet" href="assets/css/xmodal.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+
+    <a class="openModal" href="#xModal-Inline">Open Inline Modal</a><br />
+    <a class="openModal" href="ajax.html">Ajax Modal</a><br />
+    <a class="openModalHeadline1" href="#">Open Dynamic Modal 1</a><br />
+    <a class="openModalHeadline2" href="#">Open Dynamic Modal 2</a><br />
+
+    <h4>Effects</h4>
+    <a class="effect-swash" href="#">swash</a><br />
+    <a class="effect-foolish" href="#">foolish</a><br />
+    <a class="effect-tindown" href="#">tindown</a><br />
+    <a class="effect-tinleft" href="#">tinleft</a><br />
+
+    <a class="onLoadingStart" href="#">onLoadingStart</a><br />
+    <a class="onLoadingDone" href="#">onLoadingDone</a><br />
+
+    <div id="xModal-Inline">
+        <p class="center">Inline Modal Content </p>
+    </div>
+
+    <script>
+    $(function(){
+      $('.openModal').xModal({ width : "50%" });
+      $('.openModalHeadline1').xModal({ headline:"Test Headline 1"});
+      $('.openModalHeadline2').xModal({ headline:"Test Headline 2", description:"Description Test 2" });
+
+      //effects
+      $('.effect-swash').xModal({ headline:"Swash", effect:"swash" });
+      $('.effect-foolish').xModal({ headline:"Foolish", effect:"foolish" });
+      $('.effect-tindown').xModal({ headline:"tinDown", effect:"tinDown" });
+      $('.effect-tinleft').xModal({ headline:"tinLeft", effect:"tinLeft" });
+
+      //hitting the onStart Event
+      $('.onLoadingStart').xModal({
+          headline:"start",
+          onLoadingStart: function(){
+            console.log('start......');
+          }
+      });
+      
+      //hitting the onDone event
+      $('.onLoadingDone').xModal({
+          headline:"done",
+          onLoadingStart: function(){
+            console.log('onLoadingStart......');
+          },
+          onLoadingDone: function(){
+            console.log('onLoadingDone......');
+          },
+          onCloseStart: function(){
+              console.log('onCloseStart');
+          },
+          onCloseDone: function(){
+              console.log('onCloseDone');
+          }
+      });
+      
+      //onClose      
+
+    });
+    </script>
+
+    <script src="assets/scripts/jquery.xmodal.js"></script>
+
+<script>
+
+$(function(){
+  // $(document).on('click.xModalCloseBody', '.modal-wrapper', function (e) {
+  //     console.log('This is what happens when you close a modal');
+  // });
+
+
+
+});
+</script>
+
+</body>
+</html>
