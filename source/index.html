@@ -7,29 +7,30 @@
 </head>
 <body>
 
-    <a class="openModal" href="#xModal-Inline">Open Inline Modal</a><br />
-    <a class="openModal" href="ajax.html">Ajax Modal</a><br />
-    <a class="openModalHeadline1" href="#">Open Dynamic Modal 1</a><br />
-    <a class="openModalHeadline2" href="#">Open Dynamic Modal 2</a><br />
+    <a class="u-linkModal" href="#xModal-Inline">Open Inline Modal</a><br />
+    <a class="u-linkModal" href="ajax.html">Ajax Modal</a><br />
+    <a class="u-linkModalHeadline1" href="#">Open Dynamic Modal with Headline</a><br />
+    <a class="u-linkModalHeadline2" href="#">Open Dynamic Modal with Headline & Description</a><br />
 
-    <h4>Effects</h4>
+    <h4>Effects:</h4>
     <a class="effect-swash" href="#">swash</a><br />
     <a class="effect-foolish" href="#">foolish</a><br />
     <a class="effect-tindown" href="#">tindown</a><br />
     <a class="effect-tinleft" href="#">tinleft</a><br />
 
+    <h4>Events:</h4>
     <a class="onLoadingStart" href="#">onLoadingStart</a><br />
     <a class="onLoadingDone" href="#">onLoadingDone</a><br />
 
     <div id="xModal-Inline">
-        <p class="center">Inline Modal Content </p>
+        <p class="u-textCenter">Inline Modal Content </p>
     </div>
 
     <script>
     $(function(){
-      $('.openModal').xModal({ width : "50%" });
-      $('.openModalHeadline1').xModal({ headline:"Test Headline 1"});
-      $('.openModalHeadline2').xModal({ headline:"Test Headline 2", description:"Description Test 2" });
+      $('.u-linkModal').xModal({ width : "50%" });
+      $('.u-linkModalHeadline1').xModal({ headline:"Test Headline"});
+      $('.u-linkModalHeadline2').xModal({ headline:"Test Headline", description:"Test Description Text" });
 
       //effects
       $('.effect-swash').xModal({ headline:"Swash", effect:"swash" });
@@ -72,12 +73,9 @@
 <script>
 
 $(function(){
-  // $(document).on('click.xModalCloseBody', '.modal-wrapper', function (e) {
+  // $(document).on('click.xModalCloseBody', '.xmodal-Modal', function (e) {
   //     console.log('This is what happens when you close a modal');
   // });
-
-
-
 });
 </script>
 

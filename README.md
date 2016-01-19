@@ -95,9 +95,12 @@ Options:
 | IE             | 9+      |
 
 
+# Benefits:
+* Follows SUIT CSS naming conventions.
 
 # What's Next?
-* SUIT CSS
+* Isolate magictime
+* Make default styling more generic
 * Make it so that you dont need as many child classnames (ex: inline)
 * Loading icon
 * $('element').on('xModelEnd', function(e, state){

@@ -6,7 +6,7 @@
 (function ($) {
     $.fn.xModal = function (options) {
 
-      var $mMarkup = $('<div class="modal-wrapper"><div><div></div></div></div>'),
+      var $mMarkup = $('<div class="xmodal-Modal"><div><div></div></div></div>'),
           $mInnerWrapper = $mMarkup.find('>*'),
           $mContentContainer = $mMarkup.find('>*>*'),
           $mContent = $('<div/>');
@@ -38,7 +38,7 @@
 
           $($mMarkup).removeClass(settings.effect+'In').addClass(settings.effect+'Out');
           setTimeout(function () {
-              $($mMarkup).removeClass('active').removeClass(settings.effect+'Out');
+              $($mMarkup).removeClass('is-active').removeClass(settings.effect+'Out');
               $mContentContainer.empty();
               $($mMarkup).remove();
               
@@ -66,13 +66,13 @@
           closer();
         });
 
-        $(document).off('click.xModalCloseBody', '.modal-wrapper').on('click.xModalCloseBody', '.modal-wrapper', function (e) {
+        $(document).off('click.xModalCloseBody', '.xmodal-Modal').on('click.xModalCloseBody', '.xmodal-Modal', function (e) {
           log('clicked on this: '+ e.target);
-          if($(e.target).is('.modal-wrapper')) closer();
+          if($(e.target).is('.xmodal-Modal')) closer();
         });
         
         //apply loading complete:  get the duration from css          
-        var element = $('.modal-wrapper')[0],
+        var element = $('.xmodal-Modal')[0],
             style = window.getComputedStyle(element),
             duration = style.getPropertyValue('-webkit-animation-duration'),
             stripped = duration.slice(0,-1),
@@ -174,14 +174,14 @@
           var $mCH = $mContentContainer.height();
 
           $mInnerWrapper.find('.closeModal').remove();
-          $('<a class="closeModal icon-close"></a>').prependTo($mInnerWrapper);
+          $('<a class="closeModal Icon Icon--close"></a>').prependTo($mInnerWrapper);
           $mInnerWrapper.width(settings.width);
           $mInnerWrapper.height($mCH);
           $mInnerWrapper.css({
             'margin-top' : -($mCH/2) + 'px'
           });
 
-          $($mMarkup).addClass('active').addClass(settings.effect+'In');
+          $($mMarkup).addClass('is-active').addClass(settings.effect+'In');
 
           bindEvents();
         }
@@ -223,14 +223,14 @@
           var $mCH = $mContentContainer.height();
 
           $mInnerWrapper.find('.closeModal').remove();
-          $('<a class="closeModal icon-close"></a>').prependTo($mInnerWrapper);
+          $('<a class="closeModal Icon Icon--close"></a>').prependTo($mInnerWrapper);
           $mInnerWrapper.width(settings.width);
           $mInnerWrapper.height($mCH);
           $mInnerWrapper.css({
             'margin-top' : -($mCH/2) + 'px'
           });
 
-          $($mMarkup).addClass('active').addClass(settings.effect+'In');
+          $($mMarkup).addClass('is-active').addClass(settings.effect+'In');
 
           bindEvents();
       });
