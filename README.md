@@ -1,7 +1,7 @@
 # xModal
 jQuery Modal Plugin (3kb minified)
 
-### [View Demo](http://joegeringer.com/xmodal/build/)###  
+### [View Demo](http://joegeringer.com/xmodal/build/)
 
 ## Installation:
 Include the following in the HTML.
@@ -97,7 +97,7 @@ Options:
 
 
 # What's Next?
-
+* SUIT CSS
 * Make it so that you dont need as many child classnames (ex: inline)
 * Loading icon
 * $('element').on('xModelEnd', function(e, state){
