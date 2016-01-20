@@ -6,23 +6,27 @@
 (function ($) {
     $.fn.xModal = function (options) {
 
-      var $mMarkup = $('<div class="xmodal-Modal"><div><div></div></div></div>'),
-          $mInnerWrapper = $mMarkup.find('>*'),
-          $mContentContainer = $mMarkup.find('>*>*'),
-          $mContent = $('<div/>');
+        var $mMarkup = $('<div class="xmodal-Modal"><div><div></div></div></div>'),
+            $mInnerWrapper = $mMarkup.find('>*'),
+            $mContentContainer = $mMarkup.find('>*>*'),
+            $mContent = $('<div/>');
 
-      var settings = $.extend({
-          width: "75%",
-          headline: "",
-          description: "",
-          href:"",
-          effect:"puff",
-          html:"",
-          onLoadingStart:"",
-          onLoadingDone:"",
-          onCloseStart:"",
-          onCloseDone:""
-      }, options);
+
+        var settings = $.extend({
+            width: "75%",
+            headline: "",
+            description: "",
+            href:"",
+            effectIn: "puffIn",
+            effectOut: "puffOut",
+            html:"",
+            onLoadingStart:"",
+            onLoadingDone:"",
+            onCloseStart:"",
+            onCloseDone:""
+        }, options);
+
+        log('EFFECT IN:'+ settings.effectIn + '| EFFECT OUT:' + settings.effectOut);
 
       function bindEvents(){
         var closer = function(e){
@@ -36,9 +40,10 @@
             settings.onCloseStart();
           }
 
-          $($mMarkup).removeClass(settings.effect+'In').addClass(settings.effect+'Out');
+          $($mMarkup).removeClass(settings.effectIn).addClass(settings.effectOut);
+          
           setTimeout(function () {
-              $($mMarkup).removeClass('is-active').removeClass(settings.effect+'Out');
+              $($mMarkup).removeClass('is-active').removeClass(settings.effectOut);
               $mContentContainer.empty();
               $($mMarkup).remove();
               
@@ -181,7 +186,7 @@
             'margin-top' : -($mCH/2) + 'px'
           });
 
-          $($mMarkup).addClass('is-active').addClass(settings.effect+'In');
+          $($mMarkup).addClass('is-active').addClass(settings.effectIn);
 
           bindEvents();
         }
@@ -230,7 +235,7 @@
             'margin-top' : -($mCH/2) + 'px'
           });
 
-          $($mMarkup).addClass('is-active').addClass(settings.effect+'In');
+          $($mMarkup).addClass('is-active').addClass(settings.effectIn);
 
           bindEvents();
       });

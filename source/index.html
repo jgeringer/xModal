@@ -17,10 +17,12 @@
     <a class="effect-foolish" href="#">foolish</a><br />
     <a class="effect-tindown" href="#">tindown</a><br />
     <a class="effect-tinleft" href="#">tinleft</a><br />
+    <a class="effect-boing" href="#">Boing</a><br />
 
     <h4>Events:</h4>
     <a class="onLoadingStart" href="#">onLoadingStart</a><br />
     <a class="onLoadingDone" href="#">onLoadingDone</a><br />
+    <a class="allEvents" href="#">allEvents</a><br />
 
     <div id="xModal-Inline">
         <p class="u-textCenter">Inline Modal Content </p>
@@ -33,16 +35,20 @@
       $('.u-linkModalHeadline2').xModal({ headline:"Test Headline", description:"Test Description Text" });
 
       //effects
-      $('.effect-swash').xModal({ headline:"Swash", effect:"swash" });
-      $('.effect-foolish').xModal({ headline:"Foolish", effect:"foolish" });
-      $('.effect-tindown').xModal({ headline:"tinDown", effect:"tinDown" });
-      $('.effect-tinleft').xModal({ headline:"tinLeft", effect:"tinLeft" });
+      $('.effect-swash').xModal({ headline:"Swash", effectIn:"swashIn"});
+          
+      $('.effect-foolish').xModal({ headline:"Foolish", effectIn:"foolishIn", effectOut:"foolishOut" });
+      $('.effect-tindown').xModal({ headline:"tinDown", effectIn:"tinDownIn", effectOut:"tinDownOut" });
+      $('.effect-tinleft').xModal({ headline:"tinLeft", effectIn:"tinLeftIn", effectOut:"tinLeftOut" });      
+      $('.effect-boing').xModal({ headline:"boing", effectIn:"boingInUp", effectOut:"boingOutDown" });
+      
+      
 
       //hitting the onStart Event
       $('.onLoadingStart').xModal({
           headline:"start",
           onLoadingStart: function(){
-            console.log('start......');
+            alert('onLoadingStart event fired');
           }
       });
       
@@ -50,10 +56,10 @@
       $('.onLoadingDone').xModal({
           headline:"done",
           onLoadingStart: function(){
-            console.log('onLoadingStart......');
+            console.log('onLoadingStart');
           },
           onLoadingDone: function(){
-            console.log('onLoadingDone......');
+            alert('onLoadingDone event fired');
           },
           onCloseStart: function(){
               console.log('onCloseStart');
@@ -63,8 +69,23 @@
           }
       });
       
-      //onClose      
-
+      //showing some exposed events:
+      $('.allEvents').xModal({
+          headline:"done",
+          onLoadingStart: function(){
+            alert('onLoadingStart event fired');
+          },
+          onLoadingDone: function(){
+            alert('onLoadingDone event fired');
+          },
+          onCloseStart: function(){
+              alert('onCloseStart event fired');
+          },
+          onCloseDone: function(){
+              alert('onCloseDone event fired');
+          }
+      });
+      
     });
     </script>
 

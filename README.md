@@ -1,16 +1,17 @@
 # xModal
-jQuery Modal Plugin (3kb minified)
+A modal plugin with lot's of common options available. Also can be easily used in conjunction with the amazing [magic css animation library](https://github.com/miniMAC/magic) to apply those effects if you like. 
+jQuery Modal Plugin (4kb minified)  
 
 ### [View Demo](http://joegeringer.com/xmodal/build/)
 
-## Installation:
+# Installation:
 Include the following in the HTML.
 ```html
 <link rel="stylesheet" href="xmodal.css" />
 <script src="jquery.xmodal.js"></script>
 ```
 
-## API Methods:
+# API Methods:
 
 Method Details:
 * Instantiate
@@ -43,7 +44,7 @@ $('.openModal').xModal();
 $.xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html", effect:"vanish" });
 ```
 
-### Load html:
+### Load HTML:
 ```javascript
 $.xModal({ html : "<p>In a Paragraph</p>" });
 ```
@@ -58,30 +59,42 @@ $.xModal({ img : "http://lorempixel.com/400/200" });
 $.xModal({ 
     headline: "Headline",  
     description: "Description", 
-    width: "25%", 
+    width: "75%", 
     href: "filepath",
-    effect: "puff",
+    effectIn: "puffIn",
+    effectOut: "puffOut",
     html: "",
     onLoadingStart:"",
     onLoadingDone:"",
     onCloseStart:"",
     onCloseDone:""
+}); 
+```
+## Defaults:
+* width: 75%
+* effectIn: puffIn
+* effectOut: puffOut
+
+# Effects
+These are the CSS effects that get applied when opening and closing modals. This works great with the awesome effects supplied from the [magic css animation library](https://github.com/miniMAC/magic).  
+
+## Effect Usage:
+Just supply a CSS class to get applied when opening the modal (effectIn) as well as a class that will get applied when closing (effectOut).
+
+The effects work great with css libraries such as the [magic css animation library](https://github.com/miniMAC/magic). All you need to do is supply "effectIn" and "effectOut" classnames and the plugin applies them when opening and closing the modals. If no "effectIn" or "effectOut" is supplied, then the default effect used is "puffIn" and "puffOut".
+
+### Example:
+```javascript
+$('.element').xModal({ 
+    headline:"boing", 
+    effectIn:"boingInUp", 
+    effectOut:"boingOutDown"
 });
 ```
 
-# Effects:
-Awesome effects are from the awesome [magic css animation library](https://github.com/miniMAC/magic).
-
-Example:
-```javascript
-$.xModal({ 
-    effect:"swash" 
-});
-```
-Options:  
-```javascript
-"swash", "foolish", "tinDown", "tinLeft"
-```
+There are two parameters for using effects:
+* effectIn: Applied when opening the modal.
+* effectOut: Applied when closing the modal. 
 
 # Browser Support
 | Browsers       | Version |
@@ -97,9 +110,10 @@ Options:
 
 # Benefits:
 * Follows SUIT CSS naming conventions.
+* Works easily in conjunction with the [magic css animation library](https://github.com/miniMAC/magic).
 
-# What's Next?
-* Isolate magictime
+## What's Next?
+* Isolate magic css library
 * Make default styling more generic
 * Make it so that you dont need as many child classnames (ex: inline)
 * Loading icon
