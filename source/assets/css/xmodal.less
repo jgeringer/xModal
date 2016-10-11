@@ -1,4 +1,5 @@
 @import 'variables.less';
+@import 'magictime.less';
 
 .u-textCenter{
 	text-align: center;
@@ -9,21 +10,19 @@
 	display: none;
 }
 
-//namespace: .xModal
-//component: -Modal
-
 .xmodal{
    &-Modal{
         position:fixed;
         top:100%;
-        left:auto;
-        right:auto;
+        left:0;
         width:100%;
         height:100%;
         z-index:50;
         opacity:0;
+        background:rgba(200,200,200,.9);
 
-        &:extend(.magictime);
+        .xmodal-Modal--animation(1000ms);
+        // &:extend(.magictime);
 
         &.is-active{
             top:0;
@@ -40,10 +39,9 @@
                 position:absolute;
             }
             >*{
-                background-color: #fff;
-                border-radius: 10px;
                 overflow: hidden;
-                .box-shadow(0px, 0px, 5px, 0, #6B6B6B);
+                background:#fff;
+                //.box-shadow(0px, 0px, 2px, 0, #6B6B6B);
             }
             [id^="xModal-"]{
                 display: block;
@@ -58,8 +56,8 @@
             &.Icon--close{
                 width: 30px;
                 height: 30px;
-                border-radius: 100%;
-                background-color: #db6487;
+                //border-radius: 100%;
+                background-color: #483db8;
                 z-index: 10;
                 position: absolute;
                 top: -11px;

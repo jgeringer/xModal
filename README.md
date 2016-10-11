@@ -1,5 +1,5 @@
 # xModal
-A modal plugin with lot's of common options available. Also can be easily used in conjunction with the amazing [magic css animation library](https://github.com/miniMAC/magic) to apply those effects if you like. 
+A modal plugin with lot's of common options available and also uses CSS animations to take care of the transitions. Also can be easily used in conjunction with the amazing [magic css animation library](https://github.com/miniMAC/magic) to apply those effects if you like. 
 jQuery Modal Plugin (4kb minified)  
 
 ### [View Demo](http://joegeringer.com/xmodal/build/)
@@ -123,6 +123,7 @@ There are two parameters for using effects:
 
 ## Down the road...
 * Make it so that you can't scroll down the body of the page, only within the modal.
+* Make a few themes
 * Multiple Modals
 * Other effects
 * Have image fit width of modal

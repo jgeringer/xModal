@@ -1,18 +1,13 @@
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
 var less = require('gulp-less');
-
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
-
 var cssnext = require('cssnext');
 var precss = require('precss');
-
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-
 var livereload = require('gulp-livereload');
-
 
 
 gulp.task('css', function () {

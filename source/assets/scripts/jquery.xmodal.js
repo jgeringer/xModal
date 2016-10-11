@@ -234,7 +234,7 @@
           $mInnerWrapper.css({
             'margin-top' : -($mCH/2) + 'px'
           });
-
+          //org: mMarkup, will try: mInnerWrapper
           $($mMarkup).addClass('is-active').addClass(settings.effectIn);
 
           bindEvents();
