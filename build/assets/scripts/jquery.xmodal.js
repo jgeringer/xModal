@@ -40,10 +40,14 @@
             settings.onCloseStart();
           }
 
-          $($mMarkup).removeClass(settings.effectIn).addClass(settings.effectOut);
+          $($mInnerWrapper).removeClass(settings.effectIn).addClass(settings.effectOut);          
           
           setTimeout(function () {
-              $($mMarkup).removeClass('is-active').removeClass(settings.effectOut);
+            $($mMarkup).removeClass('is-active');
+          }, 800);
+
+          setTimeout(function () {
+              $($mInnerWrapper).removeClass(settings.effectOut);
               $mContentContainer.empty();
               $($mMarkup).remove();
               
@@ -235,7 +239,8 @@
             'margin-top' : -($mCH/2) + 'px'
           });
           //org: mMarkup, will try: mInnerWrapper
-          $($mMarkup).addClass('is-active').addClass(settings.effectIn);
+          $($mMarkup).addClass('is-active')
+          $($mInnerWrapper).addClass(settings.effectIn);
 
           bindEvents();
       });
