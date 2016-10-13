@@ -2,6 +2,7 @@
   xModal Plugin: By Joe Geringer (Nansen)
   https://github.com/jgeringer/xModal
 */
+console.log('oh hioh');
 
 (function ($) {
     $.fn.xModal = function (options) {
@@ -10,7 +11,6 @@
             $mInnerWrapper = $mMarkup.find('>*'),
             $mContentContainer = $mMarkup.find('>*>*'),
             $mContent = $('<div/>');
-
 
         var settings = $.extend({
             width: "75%",

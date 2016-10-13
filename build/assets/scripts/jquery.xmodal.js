@@ -2,6 +2,7 @@
   xModal Plugin: By Joe Geringer (Nansen)
   https://github.com/jgeringer/xModal
 */
+console.log('oh hioh');
 
 (function ($) {
     $.fn.xModal = function (options) {
@@ -10,7 +11,6 @@
             $mInnerWrapper = $mMarkup.find('>*'),
             $mContentContainer = $mMarkup.find('>*>*'),
             $mContent = $('<div/>');
-
 
         var settings = $.extend({
             width: "75%",
@@ -44,7 +44,7 @@
           
           setTimeout(function () {
             $($mMarkup).removeClass('is-active');
-          }, 800);
+          }, 800); //look into calculating this from css
 
           setTimeout(function () {
               $($mInnerWrapper).removeClass(settings.effectOut);
@@ -55,7 +55,7 @@
                 settings.onCloseDone();
               }
               
-          }, 1000);
+          }, 1000); //look into calculating this from css
 
           //unbind the keyup event
           $(document).off('keyup.xModalEscape');
