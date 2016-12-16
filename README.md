@@ -2,7 +2,7 @@
 A modal plugin with lot's of common options available and also uses CSS animations to take care of the transitions. Also can be easily used in conjunction with the amazing [magic css animation library](https://github.com/miniMAC/magic) to apply those effects if you like. 
 jQuery Modal Plugin (4kb minified)  
 
-### [View Demo](http://joegeringer.com/xmodal/build/)
+### [View Demo](http://xmodal.joegeringer.com/)
 
 # Installation:
 Include the following in the HTML.
