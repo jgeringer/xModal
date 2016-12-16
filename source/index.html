@@ -7,197 +7,226 @@
 </head>
 <body>
     
-    <section>
+    <section class="pageWrapper">
 
-        <header>
-            <img src="/assets/img/logo-xmodal.svg" alt="xModal" width="75" height="55" />
-        </header>
+            <header>
+                <img src="/assets/img/logo-xmodal.svg" alt="xModal" width="75" height="55" />
+                <h1>xModal</h1>
+                <h4>jQuery Modal Plugin (4kb minified)</h4>
+            </header>
 
-        <main>
+            <main>
 
-        <article>
-            <p>xModal</p>
-            <p>jQuery Modal Plugin</p>
-            <p>A modal plugin with lot's of common options available and also uses CSS animations to take care of the transitions. Also can be easily used in conjunction with the amazing [magic css animation library](https://github.com/miniMAC/magic) to apply those effects if you like.</p> 
-            <p>jQuery Modal Plugin (4kb minified)</p>
-        </article>
+            <article>                
+                <p>A modal plugin with lot's of common options available. Also uses CSS animations to take care of the transitions. Also can be easily used in conjunction with the amazing <a href="https://github.com/miniMAC/magic" target="_blank">magic css animation library</a> to apply those effects if you like.</p> 
+                <p>Maintained at GitHub: <a href="https://github.com/jgeringer/xModal">https://github.com/jgeringer/xModal</a>
+            </article>
 
-        <section>
-            <a class="u-linkModal" href="#xModal-Inline">Open Inline Modal</a><br />
-            <a class="u-linkModal" href="ajax.html">Ajax Modal</a><br />
-            <a class="u-linkModalHeadline1" href="#">Open Dynamic Modal with Headline</a><br />
-            <a class="u-linkModalHeadline2" href="#">Open Dynamic Modal with Headline & Description</a><br />
+            <hr />
 
-            <h4>Effects:</h4>
-            <a class="effect-swash" href="#">swash</a><br />
-            <a class="effect-foolish" href="#">foolish</a><br />
-            <a class="effect-tindown" href="#">tindown</a><br />
-            <a class="effect-tinleft" href="#">tinleft</a><br />
-            <a class="effect-boing" href="#">Boing</a><br />
+            <section>
+                <h4 class="u-marginBmd">Basic Examples:</h4>
+                <a class="u-linkModal" href="#xModal-Inline">Open Inline Modal</a> | 
+                <a class="u-linkModal" href="ajax.html">Ajax Modal</a> | 
+                <a class="u-linkModalHeadline1" href="#">Open Dynamic Modal with Headline</a> | 
+                <a class="u-linkModalHeadline2" href="#">Open Dynamic Modal with Headline & Description</a><br />
 
-            <h4>Events:</h4>
-            <a class="onLoadingStart" href="#">onLoadingStart</a><br />
-            <a class="onLoadingDone" href="#">onLoadingDone</a><br />
-            <a class="allEvents" href="#">allEvents</a><br />
+                <h4 class="u-marginBmd">Effects:</h4>
+                <a class="effect-swash" href="#">swash</a> | 
+                <a class="effect-foolish" href="#">foolish</a> | 
+                <a class="effect-tindown" href="#">tindown</a> | 
+                <a class="effect-tinleft" href="#">tinleft</a> | 
+                <a class="effect-boing" href="#">Boing</a><br />
 
-            <div id="xModal-Inline">
-                <p class="u-textCenter">Inline Modal Content </p>
-            </div>
-        </section>
-       
+                <h4 class="u-marginBmd">Events:</h4>
+                <a class="onLoadingStart" href="#">onLoadingStart</a> | 
+                <a class="onLoadingDone" href="#">onLoadingDone</a> | 
+                <a class="allEvents" href="#">allEvents</a><br />
 
+                <div id="xModal-Inline">
+                    <p class="u-textCenter">Inline Modal Content </p>
+                </div>
+            </section>
 
+            <hr />
 
-<aside>
-<h1>Installation:</h1>
+            <aside>
+            <h1>Installation:</h1>
 
-<p>Include the following in the HTML.
+            <p>Include the following in the HTML.
 
-<pre>
-    <code class="language-html">
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;xmodal.css&quot; /&gt;
-        &lt;script src=&quot;jquery.xmodal.js&quot;&gt;&lt;/script&gt;
-    </code>
-</pre>
+            <pre>
+                <code class="language-html">
+                    &lt;link rel=&quot;stylesheet&quot; href=&quot;xmodal.css&quot; /&gt;
+                    &lt;script src=&quot;jquery.xmodal.js&quot;&gt;&lt;/script&gt;
+                </code>
+            </pre>
 
-<hr />
+            <hr />
 
-<h1>API Methods:</h1>
+            <h1>API Methods:</h1>
 
-<p>Method Details:
-* Instantiate
-* Parameters</p>
+            <h2>Instantiate:</h2>
 
-<h1>Instantiate:</h1>
+            <p>With no parameters, xModal will be instantiated with the default configuration options. For advanced configuration, any number of options may be passed as an object literal. See Parameters.</p>
 
-<p>With no parameters, xModal will be instantiated with the default configuration options. For advanced configuration, any number of options may be passed as an object literal. See Parameters.</p>
+            <h3>To load a modal when clicking on an element that has "openModal" as the class name:</h3>
+            <pre>
+                <code class="language-javascript">
+                    $('.openModal').xModal();
+                </code>
+            </pre>
 
-<h3>To load a modal when clicking on an element that has "openModal" as the class name:</h3>
-<pre>
-    <code class="language-javascript">
-        $('.openModal').xModal();
-    </code>
-</pre>
+            <h3>To load an inline modal:</h3>
+            <pre>
+                <code class="language-html">
+                    &lt;a class=&quot;openModal&quot; href=&quot;#xModal-Inline&quot;&gt;Open Inline Modal&lt;/a&gt;&lt;/p&gt;
 
-<h3>To load an inline modal:</h3>
-<pre>
-    <code class="language-html">
-        &lt;a class=&quot;openModal&quot; href=&quot;#xModal-Inline&quot;&gt;Open Inline Modal&lt;/a&gt;&lt;/p&gt;
+                    &lt;div id=&quot;xModal-Inline&quot; class=&quot;modal-wrapper&quot;&gt;
+                        &lt;div class=&quot;modal-container&quot;&gt;
+                            &lt;div class=&quot;modal-inner-container&quot;&gt;
+                                &lt;p&gt;Modal Content&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </code>
+            </pre>
 
-        &lt;div id=&quot;xModal-Inline&quot; class=&quot;modal-wrapper&quot;&gt;
-            &lt;div class=&quot;modal-container&quot;&gt;
-                &lt;div class=&quot;modal-inner-container&quot;&gt;
-                    &lt;p&gt;Modal Content&lt;/p&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    </code>
-</pre>
+            <h3>Load via script:</h3>
+            <pre>
+                <code class="language-javascript">
+                    $.xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html", effect:"vanish" });
+                </code>
+            </pre>
 
-<h3>Load via script:</h3>
-<pre>
-    <code class="language-javascript">
-        $.xModal({ headline:"Headline", description:"Description", width:"25%", href:"ajax.html", effect:"vanish" });
-    </code>
-</pre>
-
-<h3>Load HTML:</h3>
-<pre>
-    <code class="language-javascript">
-        $.xModal({ html : "&lt;p&gt;In a Paragraph&lt;/p&gt;" });
-    </code>
-</pre>
+            <h3>Load HTML:</h3>
+            <pre>
+                <code class="language-javascript">
+                    $.xModal({ html : "&lt;p&gt;In a Paragraph&lt;/p&gt;" });
+                </code>
+            </pre>
 
 
-<h3>Load image:</h3>
-<pre>
-    <code class="language-javascript">
-        $.xModal({ img : "http://lorempixel.com/400/200" });
-    </code>
-</pre>
+            <h3>Load image:</h3>
+            <pre>
+                <code class="language-javascript">
+                    $.xModal({ img : "http://lorempixel.com/400/200" });
+                </code>
+            </pre>
 
-<h1>Parameters:</h1>
-<pre>
-    <code class="language-javascript">
-        $.xModal({ 
-            headline: "Headline",
-            description: "Description", 
-            width: "75%", 
-            href: "filepath",
-            effectIn: "puffIn",
-            effectOut: "puffOut",
-            html: "",
-            onLoadingStart:"",
-            onLoadingDone:"",
-            onCloseStart:"",
-            onCloseDone:""
-        });
-    </code>
-</pre>
+            <h1>Parameters:</h1>
+            <pre>
+                <code class="language-javascript">
+                    $.xModal({ 
+                        headline: "Headline",
+                        description: "Description", 
+                        width: "75%", 
+                        href: "filepath",
+                        effectIn: "puffIn",
+                        effectOut: "puffOut",
+                        html: "",
+                        onLoadingStart:"",
+                        onLoadingDone:"",
+                        onCloseStart:"",
+                        onCloseDone:""
+                    });
+                </code>
+            </pre>
 
+            <hr />
 
-<h2>Defaults:</h2>
+            <h2>Defaults:</h2>
 
-<ul>
-<li>width: 75%</li>
-<li>effectIn: puffIn</li>
-<li>effectOut: puffOut</li>
-</ul>
+            <ul>
+            <li>width: 75%</li>
+            <li>effectIn: puffIn</li>
+            <li>effectOut: puffOut</li>
+            </ul>
 
-<h1>Effects</h1>
+            <hr />
 
-<p>These are the CSS effects that get applied when opening and closing modals. This works great with the awesome effects supplied from the <a href="https://github.com/miniMAC/magic">magic css animation library</a>.  </p>
+            <h1>Effects</h1>
 
-<h2>Effect Usage:</h2>
+            <p>These are the CSS effects that get applied when opening and closing modals. This works great with the awesome effects supplied from the <a href="https://github.com/miniMAC/magic">magic css animation library</a>.  </p>
 
-<p>Just supply a CSS class to get applied when opening the modal (effectIn) as well as a class that will get applied when closing (effectOut).</p>
+            <h2>Effect Usage:</h2>
 
-<p>The effects work great with css libraries such as the <a href="https://github.com/miniMAC/magic">magic css animation library</a>. All you need to do is supply "effectIn" and "effectOut" classnames and the plugin applies them when opening and closing the modals. If no "effectIn" or "effectOut" is supplied, then the default effect used is "puffIn" and "puffOut".</p>
+            <p>Just supply a CSS class to get applied when opening the modal (effectIn) as well as a class that will get applied when closing (effectOut).</p>
 
-<h3>Example:</h3>
-<pre>
-    <code class="language-javascript">
-        $('.element').xModal({ 
-            headline:"boing", 
-            effectIn:"boingInUp", 
-            effectOut:"boingOutDown"
-        });
-    </code>
-</pre>
+            <p>The effects work great with css libraries such as the <a href="https://github.com/miniMAC/magic">magic css animation library</a>. All you need to do is supply "effectIn" and "effectOut" classnames and the plugin applies them when opening and closing the modals. If no "effectIn" or "effectOut" is supplied, then the default effect used is "puffIn" and "puffOut".</p>
 
-
-<p>There are two parameters for using effects:
-* effectIn: Applied when opening the modal.
-* effectOut: Applied when closing the modal. </p>
-
-<h1>Browser Support</h1>
-
-<p>| Browsers       | Version |
-|----------      |---------|
-| Chrome         | 31+     |
-| Firefox        | 31+     |
-| Safari         | 7+      |
-| iOS Safari     | 7+      |
-| Android        | 4.1+    |
-| Android Chrome | 42+     |
-| IE             | 9+      |</p>
-
-<h1>Benefits:</h1>
-<ul>
-    <li>Follows SUIT CSS naming conventions.</li>
-    <li>Works easily in conjunction with the <a href="https://github.com/miniMAC/magic">magic css animation library</a>.</li>
-</ul>
-
-</aside>
-
-    
+            <h3>Example:</h3>
+            <pre>
+                <code class="language-javascript">
+                    $('.element').xModal({ 
+                        headline:"boing", 
+                        effectIn:"boingInUp", 
+                        effectOut:"boingOutDown"
+                    });
+                </code>
+            </pre>
 
 
+            <p>There are two parameters for using effects:
+            <ol> 
+                <li>effectIn: Applied when opening the modal.</li>
+                <li>effectOut: Applied when closing the modal.</li>
+            </ol>
 
-    </main>
+            <hr />
+
+            <h1>Browser Support</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>Browsers</td>
+                        <td>Version</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chrome</td>
+                        <td>31+</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox</td>
+                        <td>31+</td>
+                    </tr>
+                    <tr>
+                        <td>Safari</td>
+                        <td>7+</td>
+                    </tr>
+                    <tr>
+                        <td>iOS Safari</td>
+                        <td>7+</td>
+                    </tr>
+                    <tr>
+                        <td>Android</td>
+                        <td>4.1</td>
+                    </tr>
+                    <tr>
+                        <td>Android Chrome</td>
+                        <td>42+</td>
+                    </tr>
+                    <tr>
+                        <td>IE</td>
+                        <td>9+</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            </aside>
+
+        </main>
+
+        <hr />
+
+        <footer>
+            <p>Built by <a href="http://www.joegeringer.com" target="_blank">Joe Geringer</a> | <a href="https://github.com/jgeringer/xModal">https://github.com/jgeringer/xModal</a>
+        </footer>
 
     </section>
-
 
     <script>
     $(function(){
@@ -213,8 +242,6 @@
       $('.effect-tinleft').xModal({ headline:"tinLeft", effectIn:"tinLeftIn", effectOut:"tinLeftOut" });      
       $('.effect-boing').xModal({ headline:"boing", effectIn:"boingInUp", effectOut:"boingOutDown" });
       
-      
-
       //hitting the onStart Event
       $('.onLoadingStart').xModal({
           headline:"start",
@@ -261,15 +288,6 @@
     </script>
 
     <script src="assets/scripts/jquery.xmodal.js"></script>
-
-<script>
-
-$(function(){
-  // $(document).on('click.xModalCloseBody', '.xmodal-Modal', function (e) {
-  //     console.log('This is what happens when you close a modal');
-  // });
-});
-</script>
 
 </body>
 </html>

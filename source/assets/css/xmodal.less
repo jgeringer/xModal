@@ -1,6 +1,58 @@
 @import 'variables.less';
 @import 'magictime.less';
 
+
+body{
+    font-family: Arial, Helvetica, sans-serif;  
+    font-size: 14px;  
+}
+
+h1{
+    font-size: 1.4em;
+}
+h2{
+    font-size: 1.3em;
+}
+h3{
+    font-size: 1.2em;
+}
+h4{
+    font-size: 1.1em;
+}
+
+.u-marginBmd{
+    margin-bottom:.5em;
+}
+
+hr{
+    border:0;
+    height: 1px;
+    background: #ccc;
+    margin: 2em 0;
+}
+
+.pageWrapper{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header{
+    background:linear-gradient(45deg, #00adff, #cc00ff);
+    color:#111;
+    padding:1em;
+    text-align: center;
+    border-radius: 10px;
+    h1, h4{
+        margin-bottom: 0;
+        padding-bottom: 0;
+        color:#fff;
+    }
+    h4{
+        margin-top: .5em;
+    }
+}
+
 //utilities:
 .u-textCenter{
 	text-align: center;
@@ -82,8 +134,8 @@
 
 pre{
     word-wrap: normal;
-        max-height: 600px;
-        width: auto;
+    max-height: 600px;
+    width: auto;
     overflow: auto;
     font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
     font-size: 13px;
